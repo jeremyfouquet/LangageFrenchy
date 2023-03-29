@@ -88,6 +88,11 @@ class BasicParser(Parser):
     @_('NAME "=" STRING')
     def var_assign(self, p):
         return ('var_assign', p.NAME, p.STRING)
+    
+    # Dans le cas d'un echo
+    @_('WRITE STRING')
+    def statement(self, p):
+        return ('write', p.STRING)
 
     @_('expr')
     def statement(self, p):

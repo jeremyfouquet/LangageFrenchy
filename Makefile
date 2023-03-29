@@ -23,7 +23,7 @@ clean:
 	rm -rf app/__pycache__
 	rm -rf venv
 
-install:
+install-venv:
 	sudo apt install $(P3) python3-venv
 
-.PHONY: run clean tests i_packages
+.PHONY: run clean tests install-venv

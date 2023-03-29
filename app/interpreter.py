@@ -90,6 +90,9 @@ class BasicExecute:
         if node[0] == 'var_assign':
             self.env[node[1]] = self.walkTree(node[2])
             return node[1]
+        
+        if node[0] == 'write':
+            return self.walkTree(node[1])
 
         if node[0] == 'var':
             try:

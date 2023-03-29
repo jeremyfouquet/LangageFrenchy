@@ -123,5 +123,15 @@ class TestInterpreter(unittest.TestCase):
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), '"salut"\n')
 
+    def test_echo(self):
+        ''' Test le retour de chaine '''
+        lexer = BasicLexer()
+        parser = BasicParser()
+        env = {}
+        tree = parser.parse(lexer.tokenize('ECRIT "salut"'))
+        with patch('sys.stdout', new = StringIO()) as fake_out:
+            BasicExecute(tree, env)
+            self.assertEqual(fake_out.getvalue(), '"salut"\n')
+
 if __name__ == '__main__' :
     unittest.main()

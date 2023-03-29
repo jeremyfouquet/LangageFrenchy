@@ -1,6 +1,6 @@
 # LangageFrenchy
 
-Mini langage de programmation créé à en utilisant SLY (Sly Lex Yacc) et Python.
+Mini langage de programmation créé en utilisant SLY (Sly Lex Yacc) et Python.
 
 ## Version
 
@@ -17,14 +17,15 @@ Ce programme utilise SLY (Sly Lex Yacc) et Python afin de compilé un nouveau la
  - Boucle FOR
  - Commentaire
  - Création et appel de fonction
+ - Retour de chaîne
 
 ## Auteur
 
 Jeremy Fouquet
 
-## Url Projet
+## Clone Projet
 
-https://github.com/jeremyfouquet/langagefrenchy.git
+git clone https://github.com/jeremyfouquet/LangageFrenchy.git
 
 ## license
 
@@ -42,7 +43,7 @@ Dans `requirements.txt`
 
 Executer le programme
 ```
-$ make run
+$ make
 ```
 
 Nettoyer le cache
@@ -53,6 +54,11 @@ $ make clean
 Executer les tests
 ```
 $ make tests
+```
+
+Installer environnement virtuel venv pour linux
+```
+$ make install-venv
 ```
 
 Exemple d'instruction
