@@ -75,11 +75,12 @@ LangageFrenchy > POUR x=0 VERS 2 ALORS x
 0
 1
 LangageFrenchy > #commentaire
-LangageFrenchy > FONC mafonction() -> a="salut"
+LangageFrenchy > FONC mafonction() -> a=1
 LangageFrenchy > mafonction()
 LangageFrenchy > a
+1
+LangageFrenchy > ECRIT "salut"
 "salut"
-
 ```
 
 ## Structure
