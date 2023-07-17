@@ -12,9 +12,9 @@ class BasicLexer(Lexer):
     # Define tokens
     EQEQ = r'EGALE A'
     LE   = r'INFERIEUR OU EGALE A'
-    LT   = r'INFERIEUR'
+    LT   = r'INFERIEUR A'
     GE   = r'SUPERIEUR OU EGALE A'
-    GT   = r'SUPERIEUR'
+    GT   = r'SUPERIEUR A'
     NE   = r'DIFFERENT DE'
     ARROW = r'->'
 
