@@ -67,9 +67,9 @@ LangageFrenchy > 1+1
 2
 LangageFrenchy > 1+1*2
 3
-LangageFrenchy > 1==1
+LangageFrenchy > 1 EGALE A 1
 Vrai
-LangageFrenchy > SI 1==1 ALORS 1 SINON 0
+LangageFrenchy > SI 1 EGALE A 1 ALORS 1 SINON 0
 1
 LangageFrenchy > POUR x=0 VERS 2 ALORS x
 0
