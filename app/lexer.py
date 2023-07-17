@@ -10,12 +10,12 @@ class BasicLexer(Lexer):
     literals = { '=', '+', '-', '/', '*', '(', ')', ',', ';' }
 
     # Define tokens
-    EQEQ = r'=='
-    LE   = r'<='
-    LT   = r'<'
-    GE   = r'>='
-    GT   = r'>'
-    NE   = r'!='
+    EQEQ = r'EGALE A'
+    LE   = r'INFERIEUR OU EGALE A'
+    LT   = r'INFERIEUR'
+    GE   = r'SUPERIEUR OU EGALE A'
+    GT   = r'SUPERIEUR'
+    NE   = r'DIFFERENT DE'
     ARROW = r'->'
 
     NAME = r'[a-zA-Z_][a-zA-Z0-9_]*'
