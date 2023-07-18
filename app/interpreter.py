@@ -1,3 +1,12 @@
+"""
+Ce programme contient la classe BasicExecute qui évalue et exécute un arbre syntaxique de manière hiérarchique dans un processus récursif.
+"""
+
+__author__ = "Jeremy Fouquet"
+__version__ = "1.0.0"
+__credits__ = "Réalisé dans le cadre du cours de Interprétation & Compilation de L3 Informatique de L IED"
+__description__ = "Ce programme utilise la classe BasicExecute pour évaluer et exécuter un arbre syntaxique de manière hiérarchique."
+
 class BasicExecute:
     """
     Evalue l'arbre syntaxique de manière hiérarchique dans un processus récursif pour executer et afficher la réponse
@@ -90,7 +99,7 @@ class BasicExecute:
         if node[0] == 'var_assign':
             self.env[node[1]] = self.walkTree(node[2])
             return node[1]
-        
+
         if node[0] == 'write':
             return self.walkTree(node[1])
 
@@ -98,7 +107,7 @@ class BasicExecute:
             try:
                 return self.env[node[1]]
             except LookupError:
-                print("Undefined variable '"+node[1]+"' found!")
+                print("La variable \'"+node[1]+"\' n'est pas définie.")
                 return 0
 
         if node[0] == 'for_loop':

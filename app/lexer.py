@@ -1,3 +1,12 @@
+"""
+Ce fichier contient la classe BasicLexer, qui est un analyseur lexical permettant d'attribuer un type et une valeur à chaque jeton (token).
+"""
+
+__author__ = "Jeremy Fouquet"
+__version__ = "1.0.0"
+__credits__ = "Réalisé dans le cadre du cours de Interprétation & Compilation de L3 Informatique de L IED"
+__description__ = "Ce fichier contient la classe BasicLexer, qui est un analyseur lexical pour un langage de programmation basique."
+
 from sly import Lexer
 
 class BasicLexer(Lexer):

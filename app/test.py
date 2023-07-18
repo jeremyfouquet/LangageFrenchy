@@ -1,3 +1,13 @@
+"""
+Ce fichier contient les tests pour l'interpréteur du langage de programmation basique.
+"""
+
+__author__ = "Jeremy Fouquet"
+__version__ = "1.0.0"
+__credits__ = "Réalisé dans le cadre du cours de Interprétation & Compilation de L3 Informatique de L IED"
+__description__ = "Ce fichier contient les tests pour l'interpréteur du langage de programmation basique."
+
+
 from io import StringIO
 import unittest
 from unittest.mock import patch
@@ -50,11 +60,11 @@ class TestInterpreter(unittest.TestCase):
         lexer = BasicLexer()
         parser = BasicParser()
         env = {}
-        tree = parser.parse(lexer.tokenize('1==1'))
+        tree = parser.parse(lexer.tokenize('1 EGALE A 1'))
         with patch('sys.stdout', new = StringIO()) as fake_out:
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), 'Vrai\n')
-        tree = parser.parse(lexer.tokenize('1<1'))
+        tree = parser.parse(lexer.tokenize('1 INFERIEUR A 1'))
         with patch('sys.stdout', new = StringIO()) as fake_out:
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), 'Faux\n')
@@ -62,15 +72,15 @@ class TestInterpreter(unittest.TestCase):
         with patch('sys.stdout', new = StringIO()) as fake_out:
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), 'Vrai\n')
-        tree = parser.parse(lexer.tokenize('1>1'))
+        tree = parser.parse(lexer.tokenize('1 SUPERIEUR A 1'))
         with patch('sys.stdout', new = StringIO()) as fake_out:
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), 'Faux\n')
-        tree = parser.parse(lexer.tokenize('1>=1'))
+        tree = parser.parse(lexer.tokenize('1 SUPERIEUR OU EGALE A1'))
         with patch('sys.stdout', new = StringIO()) as fake_out:
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), 'Vrai\n')
-        tree = parser.parse(lexer.tokenize('1!=1'))
+        tree = parser.parse(lexer.tokenize('1 DIFFERENT DE 1'))
         with patch('sys.stdout', new = StringIO()) as fake_out:
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), 'Faux\n')
@@ -80,11 +90,11 @@ class TestInterpreter(unittest.TestCase):
         lexer = BasicLexer()
         parser = BasicParser()
         env = {}
-        tree = parser.parse(lexer.tokenize('SI 1==1 ALORS 1 SINON 0'))
+        tree = parser.parse(lexer.tokenize('SI 1 EGALE A 1 ALORS 1 SINON 0'))
         with patch('sys.stdout', new = StringIO()) as fake_out:
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), '1\n')
-        tree = parser.parse(lexer.tokenize('SI 1!=1 ALORS 1 SINON 0'))
+        tree = parser.parse(lexer.tokenize('SI 1 DIFFERENT DE 1 ALORS 1 SINON 0'))
         with patch('sys.stdout', new = StringIO()) as fake_out:
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), '0\n')

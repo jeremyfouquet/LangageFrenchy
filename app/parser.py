@@ -1,3 +1,13 @@
+"""
+Ce fichier contient la classe BasicParser, qui est un analyseur syntaxique permettant de convertir un flux de jetons en arbre syntaxique en utilisant des règles de grammaire.
+"""
+
+__author__ = "Jeremy Fouquet"
+__version__ = "1.0.0"
+__credits__ = "Réalisé dans le cadre du cours de Interprétation & Compilation de L3 Informatique de L IED"
+__description__ = "Ce fichier contient la classe BasicParser, qui est un analyseur syntaxique pour un langage de programmation basique."
+
+
 from sly import Parser
 from lexer import BasicLexer
 
@@ -88,7 +98,7 @@ class BasicParser(Parser):
     @_('NAME "=" STRING')
     def var_assign(self, p):
         return ('var_assign', p.NAME, p.STRING)
-    
+
     # Dans le cas d'un echo
     @_('WRITE STRING')
     def statement(self, p):
