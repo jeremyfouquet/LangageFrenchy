@@ -108,7 +108,7 @@ class BasicExecute:
                 return self.env[node[1]]
             except LookupError:
                 print("La variable \'"+node[1]+"\' n'est pas définie.")
-                return 0
+                return None
 
         if node[0] == 'for_loop':
             if node[1][0] == 'for_loop_setup':

@@ -134,3 +134,27 @@ class BasicParser(Parser):
     @_('NUMBER')
     def expr(self, p):
         return ('num', p.NUMBER)
+
+    # Méthode error pour la gestion des erreurs de syntaxe
+    def error(self, token):
+        # Obtention des informations du jeton
+        token_type = token.type
+
+        # Texte d'erreur personnalisé en fonction du type de jeton
+        if token_type == 'EQEQ':
+            print(f"Erreur : Opération 'EGALE A' non valide.")
+        elif token_type == 'LT':
+            print(f"Erreur : Opération 'INFERIEUR A' non valide.")
+        elif token_type == 'LE':
+            print(f"Erreur : Opération 'INFERIEUR OU EGALE A' non valide.")
+        elif token_type == 'GT':
+            print(f"Erreur : Opération 'SUPERIEUR A' non valide.")
+        elif token_type == 'GE':
+            print(f"Erreur : Opération 'SUPERIEUR OU EGALE A' non valide.")
+        elif token_type == 'NE':
+            print(f"Erreur : Opération 'DIFFERENT DE' non valide.")
+        else:
+            print(f"Erreur : '"+ token_type +"' non valide.")
+
+        # Réinitialisation de l'analyseur syntaxique
+        self.restart()

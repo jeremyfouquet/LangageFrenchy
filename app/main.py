@@ -21,7 +21,7 @@ if __name__ == '__main__':
     while True:
         try:
             text = input('LangageFrenchy > ')
-        except EOFError:
+        except EOFError as e:
             break
         if text:
             tree = parser.parse(lexer.tokenize(text))

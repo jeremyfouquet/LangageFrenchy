@@ -13,7 +13,7 @@ class BasicLexer(Lexer):
     """
     Analyseur lexical permettant de donner à chaque token un type et une valeur
     """
-    tokens = { NAME, NUMBER, STRING, IF, THEN, ELSE, FOR, FUN, TO, ARROW, EQEQ, LT, LE, GT, GE, NE, WRITE }
+    tokens = { NAME, NUMBER, STRING, IF, THEN, ELSE, FOR, FUN, TO, ARROW, EQEQ, LT, LE, GT, GE, NE, WRITE}
     ignore = '\t '
 
     literals = { '=', '+', '-', '/', '*', '(', ')', ',', ';' }
@@ -37,7 +37,6 @@ class BasicLexer(Lexer):
     NAME['ECRIT'] = WRITE
 
     STRING = r'\".*?\"'
-
 
     @_(r'\d+')
     def NUMBER(self, t):

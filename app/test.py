@@ -68,7 +68,7 @@ class TestInterpreter(unittest.TestCase):
         with patch('sys.stdout', new = StringIO()) as fake_out:
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), 'Faux\n')
-        tree = parser.parse(lexer.tokenize('1<=1'))
+        tree = parser.parse(lexer.tokenize('1 INFERIEUR OU EGALE A 1'))
         with patch('sys.stdout', new = StringIO()) as fake_out:
             BasicExecute(tree, env)
             self.assertEqual(fake_out.getvalue(), 'Vrai\n')
